@@ -1,21 +1,58 @@
 site_name: Adestramento Canino Moderno
+site_url: https://ViniCorrea.github.io/adestramento-canino-moderno/
+site_description: Compêndio técnico sobre comportamento e adestramento canino baseado em evidências.
+site_author: Vinícius Corrêa
+
+repo_name: ViniCorrea/adestramento-canino-moderno
+repo_url: https://github.com/ViniCorrea/adestramento-canino-moderno
+edit_uri: edit/main/docs/
+
 theme:
   name: material
   language: pt-BR
+  icon:
+    logo: material/dog-side
+    favicon: material/dog-side
   features:
     - content.code.copy
     - content.action.edit
+    - content.tooltips
     - navigation.expand
+    - navigation.indexes
+    - navigation.instant
+    - navigation.tracking
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
   palette:
     - scheme: default
       primary: indigo
       accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
     - scheme: slate
       primary: indigo
       accent: indigo
       toggle:
         icon: material/brightness-4
-        name: Switch to dark mode
+        name: Mudar para modo claro
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+      locale: pt
 
 markdown_extensions:
   - admonition
@@ -42,12 +79,23 @@ markdown_extensions:
   - pymdownx.keys
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ViniCorrea
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@vinuscorrea
 
 nav:
   - Home: index.md
@@ -55,3 +103,5 @@ nav:
     - 'Enriquecimento Ambiental': artigos/enriquecimento.md
     - 'O Cérebro em Pânico': artigos/flooding-e-dessensibilizacao-sistematica.md
     - 'Protocolo LIMA': artigos/protocolo-lima.md
+
+copyright: Copyright &copy; 2025 Vinícius Corrêa
