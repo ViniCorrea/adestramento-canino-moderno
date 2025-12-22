@@ -1,0 +1,15 @@
+INHERIT: mkdocs.yaml
+
+plugins:
+  - search
+  - glightbox
+  - git-revision-date-localized:
+      type: timeago
+      fallback_to_build_date: true
+      locale: pt
+  - page-to-pdf:
+      disable_cover_page: true
+      disable_toc: true
+      scale: 0.8
+      print_background: true
+      included_in_search: false

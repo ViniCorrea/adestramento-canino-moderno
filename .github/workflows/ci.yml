@@ -35,8 +35,11 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Build MkDocs
-        run: mkdocs build
+      - name: Install Playwright Browsers
+        run: playwright install chromium
+
+      - name: Build MkDocs with PDF
+        run: mkdocs build -f mkdocs-pdf.yml
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
